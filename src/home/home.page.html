@@ -1,0 +1,86 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Consulta CEP
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-grid>
+    <ion-row class="ion-justify-content-center">
+      <ion-col class="input">
+        <ion-input [(ngModel)]="cep" placeholder="Digite aqui o CEP" value={{cep}} color="medium"></ion-input>
+      </ion-col>
+    </ion-row>
+	
+	<ion-item>
+		<ion-label></ion-label>
+		<ion-label></ion-label>
+		<ion-label></ion-label>
+		<ion-label></ion-label>
+		<ion-label></ion-label>
+		<ion-label></ion-label>
+		<ion-label></ion-label>
+		<ion-label></ion-label>
+	</ion-item>
+	<ion-item>
+		<ion-label></ion-label>
+		<ion-label></ion-label>
+		<ion-label></ion-label>
+		<ion-label></ion-label>
+		<ion-label></ion-label>
+		<ion-label></ion-label>
+		<ion-label></ion-label>
+		<ion-label></ion-label>
+	</ion-item>
+	<ion-item>
+		<ion-label></ion-label>
+		<ion-label></ion-label>
+		<ion-label></ion-label>
+		<ion-label></ion-label>
+		<ion-label></ion-label>
+		<ion-label></ion-label>
+		<ion-label></ion-label>
+		<ion-label></ion-label>
+	</ion-item>
+
+    <ion-row class="ion-justify-content-center">
+      <ion-col size=full>
+        <ion-button class="consultabtn" (click)="getCEP()">Consultar</ion-button>
+      </ion-col>
+      <ion-col size=full>
+        <ion-button class="limpabtn" (click)="limpar()">Limpar</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  
+
+  <ion-card *ngIf="Info">
+
+    <ion-item *ngIf="Info.logradouro">
+      <ion-label>Logradouro: </ion-label>
+      <ion-label color="medium" text-wrap>{{Info.logradouro}}</ion-label>
+    </ion-item>
+    <ion-item *ngIf="Info.complemento">
+      <ion-label>Compl: </ion-label>
+      <ion-label color="medium" text-wrap>{{Info.complemento}}</ion-label>
+    </ion-item>
+    <ion-item *ngIf="Info.bairro">
+      <ion-label>Bairro: </ion-label>
+      <ion-label color="medium" text-wrap>{{Info.bairro}}</ion-label>
+    </ion-item>
+    <ion-item *ngIf="Info.localidade">
+      <ion-label>Cidade: </ion-label>
+      <ion-label color="medium" text-wrap>{{Info.localidade}}</ion-label>
+    </ion-item>
+    <ion-item *ngIf="Info.uf">
+      <ion-label>UF: </ion-label>
+      <ion-label color="medium" text-wrap>{{Info.uf}}</ion-label>
+    </ion-item>
+
+    
+  </ion-card>
+
+</ion-content>
